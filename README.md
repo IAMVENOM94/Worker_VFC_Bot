@@ -25,3 +25,18 @@
    ```bash
    python bot.py
    ```
+
+
+## Docker / bothost
+1. Добавь свой `.env` на основе `.env.example`
+2. Убедись, что рядом с проектом лежит `Dockerfile`
+3. Собери и запусти контейнер:
+   ```bash
+   docker build -t work-time-bot .
+   docker run --env-file .env work-time-bot
+   ```
+
+### Что важно
+- проект уже написан под **aiogram 3.22.0**
+- `executor` здесь **не нужен**
+- в контейнер не нужно класть реальный `.env` и рабочую базу `*.db`
